@@ -21,7 +21,13 @@
 
   <body>
     <main>
-      {{ content_for_layout }}
+      {% section 'header' %}
+
+      <main>
+        {{ content_for_layout }}
+      </main>
+
+      {% section 'footer' %}
     </main>
   </body>
 </html>
