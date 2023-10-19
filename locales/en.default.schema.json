@@ -1,1 +1,58 @@
-{}
+{
+  "sections": {
+    "header": {
+      "name": "Header"
+    },
+    "footer": {
+      "name": "Footer"
+    },
+    "main-account": {
+      "name": "Account"
+    },
+    "main-activate-account": {
+      "name": "Account activation"
+    },
+    "main-addresses": {
+      "name": "Addresses"
+    },
+    "main-article": {
+      "name": "Blog post"
+    },
+    "main-blog": {
+      "name": "Blog posts"
+    },
+    "main-cart": {
+      "name": "Cart"
+    },
+    "main-collection": {
+      "name": "Collection"
+    },
+    "main-list-collections": {
+      "name": "Collections list"
+    },
+    "main-login": {
+      "name": "Login"
+    },
+    "main-order": {
+      "name": "Order"
+    },
+    "main-page": {
+      "name": "Page"
+    },
+    "main-password": {
+      "name": "Password"
+    },
+    "main-product": {
+      "name": "Product"
+    },
+    "main-register": {
+      "name": "Registration"
+    },
+    "main-reset-password": {
+      "name": "Password reset"
+    },
+    "main-search": {
+      "name": "Search results"
+    }
+  }
+}
