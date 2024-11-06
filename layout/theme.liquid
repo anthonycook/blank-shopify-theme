@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
@@ -16,12 +16,58 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
+    {%- liquid
+      assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+      assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+    %}
+
+    {% style %}
+      {{ settings.type_body_font | font_face: font_display: 'swap' }}
+      {{ settings.type_header_font | font_face: font_display: 'swap' }}
+
+      {{ body_font_bold | font_face: font_display: 'swap' }}
+      {{ body_font_italic | font_face: font_display: 'swap' }}
+      {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+
+      :root {
+         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+         --font-body-style: {{ settings.type_body_font.style }};
+         --font-body-weight: {{ settings.type_body_font.weight }};
+         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
+
+         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+         --font-heading-style: {{ settings.type_header_font.style }};
+         --font-heading-weight: {{ settings.type_header_font.weight }};
+
+         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
+         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+
+         --page-width: {{ settings.page_width | divided_by: 10 }}rem;
+         --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
+
+         --spacing-sections-desktop: {{ settings.spacing_sections }}px;
+         --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
+
+         --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
+         --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
+         --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
+         --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+
+       }
+    {% endstyle %}
+
     {{ content_for_header }}
   </head>
 
   <body>
     <main>
       {% section 'header' %}
+
+      <div class="page-width">
+        <h1>Hello</h1>
+        <p>This is a test</p>
+      </div>
 
       <main>
         {{ content_for_layout }}

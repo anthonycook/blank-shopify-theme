@@ -54,5 +54,50 @@
     "main-search": {
       "name": "Search results"
     }
+  },
+  "settings_schema": {
+    "typography": {
+      "name": "Typography",
+      "settings": {
+        "type_header_font": {
+          "label": "Font"
+        },
+        "heading_scale": {
+          "label": "Font size scale"
+        },
+        "header__1": {
+          "content": "Headings"
+        },
+        "header__2": {
+          "content": "Body"
+        },
+        "type_body_font": {
+          "label": "Font"
+        },
+        "body_scale": {
+          "label": "Font size scale"
+        }
+      }
+    },
+    "layout": {
+      "name": "Layout",
+      "settings": {
+        "page_width": {
+          "label": "Page width"
+        },
+        "spacing_sections": {
+          "label": "Section spacing"
+        },
+        "header__1": {
+          "content": "Grid"
+        },
+        "spacing_grid_horizontal": {
+          "label": "Horizontal spacing"
+        },
+        "spacing_grid_vertical": {
+          "label": "Vertical spacing"
+        }
+      }
+    }
   }
 }
