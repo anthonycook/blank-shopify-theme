@@ -1,1 +1,27 @@
-{}
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "color_schemes": {
+        "scheme-1": {
+          "settings": {
+            "background": "#FFFFFF",
+            "text": "#121212",
+            "button": "#121212",
+            "button_label": "#FFFFFF"
+          }
+        },
+        "scheme-2": {
+          "settings": {
+            "background": "#121212",
+            "text": "#FFFFFF",
+            "links": "#FFFFFF",
+            "icons": "#FFFFFF",
+            "button": "#FFFFFF",
+            "button_label": "#121212"
+          }
+        }
+      }
+    }
+  }
+}

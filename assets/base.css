@@ -15,7 +15,7 @@ body {
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   line-height: calc(1 + 0.8 / var(--font-body-scale));
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin: 0;
 }
 
@@ -59,6 +59,10 @@ h6,
   font-size: calc(var(--font-heading-scale) * 1.4rem);
 }
 
+a {
+  color: rgb(var(--color-link));
+}
+
 /*** Spacing ***/
 
 .page-width {
@@ -67,12 +71,337 @@ h6,
   padding: 0 1.6rem;
 }
 
-.section + .section {
+.section {
   margin-top: var(--spacing-sections-mobile);
 }
 
 @media screen and (min-width: 750px) {
-  .section + .section {
+  .section {
     margin-top: var(--spacing-sections-desktop);
   }
+}
+
+
+/*** Checkbox ****/
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: calc(var(--grid-desktop-vertical-spacing) / 2);
+  font-size: 1.5rem;
+  color: #444;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox input:focus-visible + .checkmark {
+  outline: 0.2rem solid #000;
+  outline-offset: 0.2rem;
+}
+
+.checkbox .checkmark {
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 0.1rem solid #222;
+  border-radius: 0.3rem;
+  margin-right: 0.6rem;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+}
+
+.checkbox input:checked + .checkmark {
+  background-color: #222;
+  border-color: #222;
+}
+
+.checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  top: 0.2rem;
+  width: 0.5rem;
+  height: 1.2rem;
+  border: solid #fff;
+  border-width: 0 0.2rem 0.2rem 0;
+  transform: rotate(45deg);
+}
+
+.checkbox input:disabled + .checkmark + * {
+  color: #999;
+}
+
+.checkbox:has(input:disabled) {
+  color: #777;
+  cursor: not-allowed;
+}
+
+/*** Radio ****/
+
+.radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: calc(var(--grid-desktop-vertical-spacing) / 2);
+  font-size: 1.6rem;
+  color: #444;
+}
+
+.radio input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio input:focus-visible + .radiomark {
+  outline: 0.2rem solid #000;
+  outline-offset: 0.2rem;
+}
+
+.radio .radiomark {
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 0.1rem solid #222;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #fff;
+}
+
+.radio input:checked + .radiomark::after {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 0.2rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.radio input:disabled + .radiomark + * {
+  color: #999;
+}
+
+.radio:has(input:disabled) {
+  color: #777;
+  cursor: not-allowed;
+}
+
+/*** Inputs ****/
+
+.input,
+.select,
+.textarea {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+.input input,
+.select select,
+.textarea textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: var(--font-body-family);
+  height: 5.2rem;
+  border: 0.1rem solid #222;
+  border-radius: 0;
+  width: 100%;
+  padding: 0 1.2rem;
+  font-size: 1.6rem;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  color: #000;
+}
+
+.input input::placeholder,
+.textarea textarea::placeholder {
+  font-size: 1.6rem;
+}
+
+@media (min-width: 768px) {
+  .input input,
+  .select select,
+  .textarea textarea {
+    height: 4.8rem;
+  }
+}
+
+.select {
+  width: 100%;
+}
+
+.select::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 1.4rem;
+  width: 4.4rem;
+  height: 2.6rem;
+  border-left: 0.1rem solid #999;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' /%3E%3Cpath d='m6 9 6 6 6-6' /%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center right 1.2rem;
+  background-size: 2rem;
+  pointer-events: none;
+}
+
+.input label,
+.select label,
+.textarea label {
+  font-family: var(--font-body-family);
+  position: absolute;
+  top: -0.8rem;
+  left: 0.8rem;
+  padding: 0 0.4rem;
+  background-color: white;
+  font-size: 1.3rem;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/*** Buttons ****/
+
+.button {
+  box-sizing: border-box;
+  font-family: var(--font-heading-family);
+  font-style: var(--font-heading-style);
+  font-weight: 400;
+  background-color: rgb(var(--color-button));
+  border-radius: 0.6rem;
+  color: rgb(var(--color-button-text));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 1.4rem;
+  height: 4.6rem;
+  padding: 0 1.6rem;
+  margin: 0;
+  transition: background-color 0.3s ease;
+  gap: 0.2rem;
+  text-decoration: none;
+  display: flex;
+  margin-bottom: var(--grid-desktop-vertical-spacing);
+}
+
+.button:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+.button:hover.loading {
+  background-color: #222;
+}
+
+.button.small {
+  height: 3.4rem;
+  border-radius: 3rem;
+  font-size: 1.4rem;
+}
+
+.button.alt {
+  background-color: rgb(var(--color-secondary-button));
+  color: rgb(var(--color-secondary-button-text));
+  font-weight: 500;
+}
+
+.button.link {
+  background-color: transparent;
+  padding: 0 1.6rem;
+  border: none;
+  color: #000;
+  height: auto;
+  text-decoration: underline;
+  text-underline-offset: 0.1rem;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 0.2rem;
+  font-weight: 500;
+}
+
+.button:disabled {
+  background-color: #eee;
+  color: #666;
+}
+
+.button.loading,
+.button:disabled.loading {
+  position: relative;
+}
+
+.button.loading::before,
+.button:disabled.loading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: #222;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle fill='white' stroke='white' stroke-width='15' r='15' cx='40' cy='100'%3E%3Canimate attributeName='opacity' calcMode='spline' dur='2' values='1;0;1;' keySplines='.5 0 .5 1;.5 0 .5 1' repeatCount='indefinite' begin='-.4'%3E%3C/animate%3E%3C/circle%3E%3Ccircle fill='white' stroke='white' stroke-width='15' r='15' cx='100' cy='100'%3E%3Canimate attributeName='opacity' calcMode='spline' dur='2' values='1;0;1;' keySplines='.5 0 .5 1;.5 0 .5 1' repeatCount='indefinite' begin='-.2'%3E%3C/animate%3E%3C/circle%3E%3Ccircle fill='white' stroke='white' stroke-width='15' r='15' cx='160' cy='100'%3E%3Canimate attributeName='opacity' calcMode='spline' dur='2' values='1;0;1;' keySplines='.5 0 .5 1;.5 0 .5 1' repeatCount='indefinite' begin='0'%3E%3C/animate%3E%3C/circle%3E%3C/svg%3E%0A");
+  background-size: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.6rem;
+  color: #fff;
+}
+
+.button.loading:disabled {
+  pointer-events: none;
+}
+
+/*** Details ****/
+
+.details > summary {
+  font-family: var(--font-heading-family), sans-serif;
+  list-style: none;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  font-weight: var(--font-heading-weight);
+  position: relative;
+}
+
+.details > summary::before {
+  content: "";
+  position: absolute;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M6 15l6 -6l6 6' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 1.8rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  top: calc(50% - 0.9rem);
+  right: 0;
+  transition: transform 0.3s ease;
+}
+
+.details[open] > summary::before {
+  transform: rotate(180deg);
+}
+
+.details {
+  border-bottom: 0.1rem solid #eee;
+}
+
+.details:last-child {
+  border-bottom: none;
+}
+
+.details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.details__content {
+  margin: 0.8rem 0 1.6rem 0;
 }

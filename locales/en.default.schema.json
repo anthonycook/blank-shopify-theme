@@ -53,9 +53,93 @@
     },
     "main-search": {
       "name": "Search results"
+    },
+    "featured_collection": {
+      "name": "Featured Collection",
+      "settings": {
+        "heading": {
+          "label": "Heading",
+          "default": "Collection"
+        },
+        "collection": {
+          "label": "Collection to display"
+        },
+        "products_to_show": {
+          "label": "Number of products to display"
+        },
+        "columns_desktop": {
+          "label": "Desktop columns"
+        },
+        "enable_scroll_desktop": {
+          "label": "Enable scroll on desktop"
+        },
+        "columns_mobile": {
+          "label": "Mobile columns",
+          "options": {
+            "one": "1 column",
+            "two": "2 columns"
+          }
+        },
+        "enable_scroll_mobile": {
+          "label": "Enable scroll on mobile"
+        },
+        "padding_vertical": {
+          "label": "Top padding"
+        },
+        "padding_horizontal": {
+          "label": "Bottom padding"
+        }
+      },
+      "headers": {
+        "mobile_layout": "Mobile Layout",
+        "section_padding": "Section Padding"
+      },
+      "presets": {
+        "featured_collection": {
+          "name": "Featured Collection"
+        }
+      }
     }
   },
   "settings_schema": {
+    "colors": {
+      "name": "Colors",
+      "settings": {
+        "background": {
+          "label": "Background"
+        },
+        "background_gradient": {
+          "label": "Background gradient"
+        },
+        "text": {
+          "label": "Text"
+        },
+        "primary_button_background": {
+          "label": "Button background"
+        },
+        "primary_button_text": {
+          "label": "Button text"
+        },
+        "primary_button_border": {
+          "label": "Button border"
+        },
+        "secondary_button_background": {
+          "label": "Secondary button background"
+        },
+        "secondary_button_text": {
+          "label": "Secondary button text"
+        },
+        "secondary_button_border": {
+          "label": "Secondary button border"
+        },
+        "icons": {
+          "label": "Icons"
+        },
+        "links": {
+          "label": "Links"
+        }
+      }
+    },
     "typography": {
       "name": "Typography",
       "settings": {

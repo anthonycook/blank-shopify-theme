@@ -8,6 +8,97 @@
     "theme_support_url": "https://github.com/anthonycook//blank-shopify-theme/issues"
   },
   {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          {
+            "type": "color",
+            "id": "background",
+            "label": "t:settings_schema.colors.settings.background.label",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color_background",
+            "id": "background_gradient",
+            "label": "t:settings_schema.colors.settings.background_gradient.label",
+          },
+          {
+            "type": "color",
+            "id": "text",
+            "label": "t:settings_schema.colors.settings.text.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "primary_button",
+            "label": "t:settings_schema.colors.settings.primary_button_background.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "on_primary_button",
+            "label": "t:settings_schema.colors.settings.primary_button_text.label",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "primary_button_border",
+            "label": "t:settings_schema.colors.settings.primary_button_border.label",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button",
+            "label": "t:settings_schema.colors.settings.secondary_button_background.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "on_secondary_button",
+            "label": "t:settings_schema.colors.settings.secondary_button_text.label",
+            "default": "#FFFFFF"
+          },
+          {
+            "type": "color",
+            "id": "secondary_button_border",
+            "label": "t:settings_schema.colors.settings.secondary_button_border.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "icons",
+            "label": "t:settings_schema.colors.settings.icons.label",
+            "default": "#121212"
+          },
+          {
+            "type": "color",
+            "id": "links",
+            "label": "t:settings_schema.colors.settings.links.label",
+            "default": "#121212"
+          }
+        ],
+        "role": {
+          "background": {
+            "solid": "background",
+            "gradient": "background_gradient"
+          },
+          "text": "text",
+          "primary_button": "primary_button",
+          "on_primary_button": "on_primary_button",
+          "primary_button_border": "primary_button_border",
+          "secondary_button": "secondary_button",
+          "on_secondary_button": "on_secondary_button",
+          "secondary_button_border": "secondary_button_border",
+          "icons": "icons",
+          "links": "links"
+        }
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
@@ -63,7 +154,7 @@
         "step": 100,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.page_width.label",
-        "default": 1200
+        "default": 1300
       },
       {
         "type": "range",
@@ -85,7 +176,7 @@
         "min": 4,
         "max": 40,
         "step": 4,
-        "default": 8,
+        "default": 16,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.spacing_grid_horizontal.label"
       },
@@ -95,7 +186,7 @@
         "min": 4,
         "max": 40,
         "step": 4,
-        "default": 8,
+        "default": 16,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
       }
