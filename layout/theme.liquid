@@ -36,6 +36,7 @@
         {%- endif %}
         .color-{{ scheme.id }} {
           --color-background: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
+
         {% if scheme.settings.background_gradient != empty %}
           --gradient-background: {{ scheme.settings.background_gradient }};
         {% else %}
@@ -59,7 +60,7 @@
         --color-button: {{ scheme.settings.primary_button.red }},{{ scheme.settings.primary_button.green }},{{ scheme.settings.primary_button.blue }};
         --color-button-text: {{ scheme.settings.on_primary_button.red }},{{ scheme.settings.on_primary_button.green }},{{ scheme.settings.on_primary_button.blue }};
         --color-secondary-button: {{ scheme.settings.background.red }},{{ scheme.settings.background.green }},{{ scheme.settings.background.blue }};
-        --color-secondary-button-text: {{ scheme.settings.secondary_button_label.red }},{{ scheme.settings.secondary_button_label.green }},{{ scheme.settings.secondary_button_label.blue }};
+        --color-secondary-button-text: {{ scheme.settings.on_secondary_button.red }},{{ scheme.settings.on_secondary_button.green }},{{ scheme.settings.on_secondary_button.blue }};
         --color-link: {{ scheme.settings.links.red }},{{ scheme.settings.links.green }},{{ scheme.settings.links.blue }};
       }
       {% endfor %}
